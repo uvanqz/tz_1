@@ -1,0 +1,47 @@
+/* Ваш общий стиль */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.form-field {
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #f5005c;
+    color: white;
+}
+
+/* Стили для фона */
+#bg {
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+#fullscreen-form {
+    background: #f5e3b3; /* Бледно-бежевый цвет фона */
+    padding: 40px; /* Увеличьте значение padding для большего размера */
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    width: 90%;
+}
+
+.contact-text {
+    font-size: 24px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    margin-bottom: 20px; /* Отступ снизу */
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Детали товара</title>
+</head>
+<body>
+    <h1>Детали товара</h1>
+    <img src="{{ product.photo }}" alt="{{ product.name }}">
+    <h2>{{ product.name }}</h2>
+    <p>Цена: ${{ product.price }}</p>
+    <p>Размер: {{ product.size }}</p>
+    <p>Категория: {{ product.category }}</p>
+    <form method="post" action="{{ url_for('add_to_cart') }}">
+        <select name="size">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+        </select>
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+        <input type="hidden" name="gender" value="{{ 'women' if product.category == 'Женская' else 'men' }}">
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Добавить в корзину</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  {% if not session['data'] %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        Новым пользователям скидка 10% на первый заказ! <a href="{{ url_for('register') }}" class="alert-link">Зарегистрируйтесь</a> сейчас.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endif %}
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis animate__animated animate__fadeInUp">
+            Добро пожаловать в <span class="text-primary">FashionVista Styles</span>
+        </h1>
+        <p class="lead animate__animated animate__fadeInUp">Откройте для себя брендовую одежду из Европы с нашим уникальным стилем.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3 animate__animated animate__fadeInUp">
+            <a href="{{ url_for('about') }}" class="text-decoration-none">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">О нас</button>
+            </a>
+            <button type="button" class="btn btn-lg px-4" style="background-color: #f5005c; color: white;" data-bs-toggle="modal" data-bs-target="#discountModal">
+              В каталог
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg animate__animated animate__fadeInRight">
+          <img class="rounded-lg-3 img-fluid" src="{{ url_for('static',filename='images/image_3.jpg') }}" alt="" width="400">
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="discountModalLabel">Скидка 10% на первый заказ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Начать покупки</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

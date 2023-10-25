@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+    <div class="row p-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <p class="contact-text">Профиль пользователя</p>
+        {% if user %}
+            <p>Email: {{ user.email }}</p>
+            <!-- Add other user information as needed -->
+        {% else %}
+            <p>Профиль не найден</p>
+        {% endif %}
+        <p><a href="{{ url_for('del_session') }}">Выйти</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

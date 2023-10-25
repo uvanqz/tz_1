@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-5">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+    <div class="row p-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <p class="contact-text">Свяжитесь с нами, мы с радостью ответим на ваши вопросы!</p>
+        <form method="POST">
+          {% if not session['data'] %}
+          <div class="form-field">
+            <input type="text" name="email" placeholder="Ваш email" required>
+          </div>
+          {% endif %}
+          <div class="form-field">
+            <input type="text" name="phone" placeholder="Ваш телефон" required>
+          </div>
+          <div class="form-field">
+            <textarea name="message" placeholder="Напишите пару строк" required></textarea>
+          </div>
+          <div class="form-field">
+            <button class="btn" type="submit">Отправить</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg animate__animated animate__fadeInRight">
+        <img class="rounded-lg-3 img-fluid" src="{{ url_for('static', filename='images/contact.jpg') }}" alt="" width="400">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
